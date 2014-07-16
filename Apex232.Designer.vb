@@ -96,39 +96,39 @@
 	Public WithEvents optCom5 As System.Windows.Forms.RadioButton
 	Public WithEvents optCom4 As System.Windows.Forms.RadioButton
 	Public WithEvents optCom3 As System.Windows.Forms.RadioButton
-	Public WithEvents Check1 As System.Windows.Forms.CheckBox
-	Public WithEvents _chkBill_0 As System.Windows.Forms.CheckBox
-	Public WithEvents _chkBill_6 As System.Windows.Forms.CheckBox
-	Public WithEvents _chkBill_5 As System.Windows.Forms.CheckBox
-	Public WithEvents _chkBill_4 As System.Windows.Forms.CheckBox
-	Public WithEvents _chkBill_3 As System.Windows.Forms.CheckBox
-	Public WithEvents _chkBill_2 As System.Windows.Forms.CheckBox
-	Public WithEvents _chkBill_1 As System.Windows.Forms.CheckBox
-	Public WithEvents optCom2 As System.Windows.Forms.RadioButton
-	Public WithEvents optCom1 As System.Windows.Forms.RadioButton
-	Public WithEvents txtPoll As System.Windows.Forms.TextBox
-	Public WithEvents hsPoll As System.Windows.Forms.HScrollBar
-	Public WithEvents lblCom As System.Windows.Forms.Label
-	Public WithEvents lblBill As System.Windows.Forms.Label
+    Public WithEvents chkEscrowMode As System.Windows.Forms.CheckBox
+    Public WithEvents _chkBill_0 As System.Windows.Forms.CheckBox
+    Public WithEvents _chkBill_6 As System.Windows.Forms.CheckBox
+    Public WithEvents _chkBill_5 As System.Windows.Forms.CheckBox
+    Public WithEvents _chkBill_4 As System.Windows.Forms.CheckBox
+    Public WithEvents _chkBill_3 As System.Windows.Forms.CheckBox
+    Public WithEvents _chkBill_2 As System.Windows.Forms.CheckBox
+    Public WithEvents _chkBill_1 As System.Windows.Forms.CheckBox
+    Public WithEvents optCom2 As System.Windows.Forms.RadioButton
+    Public WithEvents optCom1 As System.Windows.Forms.RadioButton
+    Public WithEvents txtPoll As System.Windows.Forms.TextBox
+    Public WithEvents hsPoll As System.Windows.Forms.HScrollBar
+    Public WithEvents lblCom As System.Windows.Forms.Label
+    Public WithEvents lblBill As System.Windows.Forms.Label
     Public WithEvents shapeComPort As Microsoft.VisualBasic.PowerPacks.RectangleShape
-	Public WithEvents lblPoll As System.Windows.Forms.Label
-	Public WithEvents shapePoll As Microsoft.VisualBasic.PowerPacks.RectangleShape
-	Public WithEvents frmControls As System.Windows.Forms.GroupBox
-	Public WithEvents chkBill As Microsoft.VisualBasic.Compatibility.VB6.CheckBoxArray
-	Public WithEvents lb0 As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
-	Public WithEvents lb1 As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
-	Public WithEvents lb2 As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
-	Public WithEvents lbD As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
-	Public WithEvents lbIN As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
-	Public WithEvents lbOUT As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
-	Public WithEvents lbx As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
-	Public WithEvents txBillCount As Microsoft.VisualBasic.Compatibility.VB6.TextBoxArray
-	Public WithEvents ShapeContainer2 As Microsoft.VisualBasic.PowerPacks.ShapeContainer
-	Public WithEvents ShapeContainer1 As Microsoft.VisualBasic.PowerPacks.ShapeContainer
-	'NOTE: The following procedure is required by the Windows Form Designer
-	'It can be modified using the Windows Form Designer.
-	'Do not modify it using the code editor.
-	<System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
+    Public WithEvents lblPoll As System.Windows.Forms.Label
+    Public WithEvents shapePoll As Microsoft.VisualBasic.PowerPacks.RectangleShape
+    Public WithEvents frmControls As System.Windows.Forms.GroupBox
+    Public WithEvents chkBill As Microsoft.VisualBasic.Compatibility.VB6.CheckBoxArray
+    Public WithEvents lb0 As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
+    Public WithEvents lb1 As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
+    Public WithEvents lb2 As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
+    Public WithEvents lbD As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
+    Public WithEvents lbIN As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
+    Public WithEvents lbOUT As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
+    Public WithEvents lbx As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
+    Public WithEvents txBillCount As Microsoft.VisualBasic.Compatibility.VB6.TextBoxArray
+    Public WithEvents ShapeContainer2 As Microsoft.VisualBasic.PowerPacks.ShapeContainer
+    Public WithEvents ShapeContainer1 As Microsoft.VisualBasic.PowerPacks.ShapeContainer
+    'NOTE: The following procedure is required by the Windows Form Designer
+    'It can be modified using the Windows Form Designer.
+    'Do not modify it using the code editor.
+    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Apex232))
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
@@ -216,7 +216,7 @@
         Me.optCom5 = New System.Windows.Forms.RadioButton()
         Me.optCom4 = New System.Windows.Forms.RadioButton()
         Me.optCom3 = New System.Windows.Forms.RadioButton()
-        Me.Check1 = New System.Windows.Forms.CheckBox()
+        Me.chkEscrowMode = New System.Windows.Forms.CheckBox()
         Me._chkBill_0 = New System.Windows.Forms.CheckBox()
         Me._chkBill_6 = New System.Windows.Forms.CheckBox()
         Me._chkBill_5 = New System.Windows.Forms.CheckBox()
@@ -1384,7 +1384,7 @@
         Me.frmControls.Controls.Add(Me.optCom5)
         Me.frmControls.Controls.Add(Me.optCom4)
         Me.frmControls.Controls.Add(Me.optCom3)
-        Me.frmControls.Controls.Add(Me.Check1)
+        Me.frmControls.Controls.Add(Me.chkEscrowMode)
         Me.frmControls.Controls.Add(Me._chkBill_0)
         Me.frmControls.Controls.Add(Me._chkBill_6)
         Me.frmControls.Controls.Add(Me._chkBill_5)
@@ -1490,20 +1490,20 @@
         Me.optCom3.Text = "3"
         Me.optCom3.UseVisualStyleBackColor = False
         '
-        'Check1
+        'chkEscrowMode
         '
-        Me.Check1.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.Check1.Checked = True
-        Me.Check1.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.Check1.Cursor = System.Windows.Forms.Cursors.Default
-        Me.Check1.ForeColor = System.Drawing.Color.White
-        Me.Check1.Location = New System.Drawing.Point(8, 124)
-        Me.Check1.Name = "Check1"
-        Me.Check1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Check1.Size = New System.Drawing.Size(105, 21)
-        Me.Check1.TabIndex = 82
-        Me.Check1.Text = "Escrow Mode"
-        Me.Check1.UseVisualStyleBackColor = False
+        Me.chkEscrowMode.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.chkEscrowMode.Checked = True
+        Me.chkEscrowMode.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.chkEscrowMode.Cursor = System.Windows.Forms.Cursors.Default
+        Me.chkEscrowMode.ForeColor = System.Drawing.Color.White
+        Me.chkEscrowMode.Location = New System.Drawing.Point(8, 124)
+        Me.chkEscrowMode.Name = "chkEscrowMode"
+        Me.chkEscrowMode.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.chkEscrowMode.Size = New System.Drawing.Size(105, 21)
+        Me.chkEscrowMode.TabIndex = 82
+        Me.chkEscrowMode.Text = "Escrow Mode"
+        Me.chkEscrowMode.UseVisualStyleBackColor = False
         '
         '_chkBill_0
         '

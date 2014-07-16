@@ -308,15 +308,12 @@ ss_end:
 chkb_end:
     End Sub
 
-    'UPGRADE_NOTE: hsPoll.Change was changed from an event to a procedure. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="4E2DC008-5EDA-4547-8317-C9316952674F"'
-    'UPGRADE_WARNING: HScrollBar event hsPoll.Change has a new behavior. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6BA9B8D2-2A32-4B6E-8D36-44949974A5B4"'
     Private Sub hsPoll_Change(ByVal newScrollValue As Integer)
         'This routine is activated when the poll rate scrollbar is used.
         txtPoll.Text = Str(newScrollValue) & " ms" 'display new poll rate
         PollRate = newScrollValue 'change value of global variable
     End Sub
 
-    'UPGRADE_WARNING: Event optCom1.CheckedChanged may fire when form is initialized. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="88B12AE1-6DE0-48A0-86F1-60C0686C026A"'
     Private Sub optCom1_CheckedChanged(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles optCom1.CheckedChanged
         If eventSender.Checked Then
             'activated when "Com 1" radio button selected
@@ -324,7 +321,6 @@ chkb_end:
         End If
     End Sub
 
-    'UPGRADE_WARNING: Event optCom2.CheckedChanged may fire when form is initialized. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="88B12AE1-6DE0-48A0-86F1-60C0686C026A"'
     Private Sub optCom2_CheckedChanged(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles optCom2.CheckedChanged
         If eventSender.Checked Then
             'activated when "Com 2" radio button selected
@@ -332,7 +328,6 @@ chkb_end:
         End If
     End Sub
 
-    'UPGRADE_WARNING: Event optCom3.CheckedChanged may fire when form is initialized. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="88B12AE1-6DE0-48A0-86F1-60C0686C026A"'
     Private Sub optCom3_CheckedChanged(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles optCom3.CheckedChanged
         If eventSender.Checked Then
             'activated when "Com 3" radio button selected
@@ -340,7 +335,6 @@ chkb_end:
         End If
     End Sub
 
-    'UPGRADE_WARNING: Event optCom4.CheckedChanged may fire when form is initialized. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="88B12AE1-6DE0-48A0-86F1-60C0686C026A"'
     Private Sub optCom4_CheckedChanged(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles optCom4.CheckedChanged
         If eventSender.Checked Then
             'activated when "Com 4" radio button selected
@@ -348,7 +342,6 @@ chkb_end:
         End If
     End Sub
 
-    'UPGRADE_WARNING: Event optCom5.CheckedChanged may fire when form is initialized. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="88B12AE1-6DE0-48A0-86F1-60C0686C026A"'
     Private Sub optCom5_CheckedChanged(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles optCom5.CheckedChanged
         If eventSender.Checked Then
             'activated when "Com 5" radio button selected
@@ -356,7 +349,6 @@ chkb_end:
         End If
     End Sub
 
-    'UPGRADE_WARNING: Event optCom6.CheckedChanged may fire when form is initialized. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="88B12AE1-6DE0-48A0-86F1-60C0686C026A"'
     Private Sub optCom6_CheckedChanged(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles optCom6.CheckedChanged
         If eventSender.Checked Then
             'activated when "Com 6" radio button selected
@@ -364,7 +356,6 @@ chkb_end:
         End If
     End Sub
 
-    'UPGRADE_WARNING: Event optCom7.CheckedChanged may fire when form is initialized. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="88B12AE1-6DE0-48A0-86F1-60C0686C026A"'
     Private Sub optCom7_CheckedChanged(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles optcom7.CheckedChanged
         If eventSender.Checked Then
             'activated when "Com 7" radio button selected
@@ -372,7 +363,6 @@ chkb_end:
         End If
     End Sub
 
-    'UPGRADE_WARNING: Event optCom8.CheckedChanged may fire when form is initialized. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="88B12AE1-6DE0-48A0-86F1-60C0686C026A"'
     Private Sub optCom8_CheckedChanged(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles optcom8.CheckedChanged
         If eventSender.Checked Then
             'activated when "Com 8" radio button selected
@@ -445,8 +435,8 @@ tgskip:
         If Bill(6) = 1 Then Master(4) = Master(4) Or 32
         If Bill(7) = 1 Then Master(4) = Master(4) Or 64
 
-        If Check1.CheckState = System.Windows.Forms.CheckState.Checked Then Master(5) = &H10 'S/R, bits 5 and 6 are the stack and return bits
-        If Check1.CheckState = System.Windows.Forms.CheckState.Unchecked Then Master(5) = 0
+        If chkEscrowMode.CheckState = System.Windows.Forms.CheckState.Checked Then Master(5) = &H10 'S/R, bits 5 and 6 are the stack and return bits
+        If chkEscrowMode.CheckState = System.Windows.Forms.CheckState.Unchecked Then Master(5) = 0
         If Escrowed = 1 Then 'if bill held in escrow, check the Allow variable
             If Allow = 0 Then Master(5) = Master(5) Or &H40 'Disallow escrowed bill; set return bit
             If Allow = 1 Then Master(5) = Master(5) Or &H20 'Allow escrowed bill; set stack bit
@@ -460,7 +450,6 @@ tgskip:
         Master(8) = Csum Xor Master(6) 'Store csum into byte 8
         Sendit = "" 'Clear output string
         For ct = 1 To 8
-            'UPGRADE_WARNING: Couldn't resolve default property of object ct. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             Sendit = Sendit & Chr(Master(ct)) 'Set output string
         Next ct
         MSComm1.Output = Sendit 'Send message to Acceptor
@@ -469,30 +458,23 @@ tgskip:
         T1 = VB.Timer()
         Do Until VB.Timer() > T1 + 0.4 'Timeout if no Acceptor Response
             If MSComm1.InBufferCount = 11 Then 'Response always 11 bytes
-                'UPGRADE_WARNING: Couldn't resolve default property of object MSComm1.Input. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 ComArray = MSComm1.Input 'Read Port
                 MSComm1.InBufferCount = 0
                 For ct = 0 To 10
-                    'UPGRADE_WARNING: Couldn't resolve default property of object ct. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     Slave(ct + 1) = ComArray(ct) 'Copy data to input array
                 Next ct
-                'UPGRADE_WARNING: Couldn't resolve default property of object NRFlag. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 NRFlag = 0 'clear error flag and exit loop, proper response received
                 Exit Do
             End If
-            'UPGRADE_WARNING: Couldn't resolve default property of object NRFlag. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             NRFlag = 1 'set error flag, did not receive proper response
         Loop
 
         'Run some checks on the data received to verify it's valid
         Csum = Slave(2) Xor Slave(3) 'verify checksum
         For ct = 4 To 9
-            'UPGRADE_WARNING: Couldn't resolve default property of object ct. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             Csum = Csum Xor Slave(ct)
         Next ct
-        'UPGRADE_WARNING: Couldn't resolve default property of object NRFlag. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
         If Csum <> Slave(11) Then NRFlag = 2 'indicate checksum error
-        'UPGRADE_WARNING: Couldn't resolve default property of object NRFlag. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
         If NRFlag <> 0 Then
             Alternate() 'because of failure, next MSG from PC must have same ack number, so flip 2x
             GoTo inbad 'Do not interpret "bad" data
@@ -539,14 +521,11 @@ inbad:
         'This function should not require any user alteration unless changes are desired
         'in the way the information is displayed on the screen.
         For shift = 4 To 0 Step -1 'Shift previous hex strings up on the display
-            'UPGRADE_WARNING: Couldn't resolve default property of object shift. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             lbOUT(shift + 1).Text = lbOUT(shift).Text
-            'UPGRADE_WARNING: Couldn't resolve default property of object shift. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             lbIN(shift + 1).Text = lbIN(shift).Text
         Next shift
         om = ""
         For ct = 1 To 8 'display output string
-            'UPGRADE_WARNING: Couldn't resolve default property of object ct. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             oc = Hex(Master(ct))
             If Len(oc) = 1 Then oc = "0" & oc
             om = om & oc & " "
@@ -554,23 +533,18 @@ inbad:
         lbOUT(0).Text = om
         os = ""
         For ct = 1 To 11 'display input string
-            'UPGRADE_WARNING: Couldn't resolve default property of object ct. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             oc = Hex(Slave(ct))
             If Len(oc) = 1 Then oc = "0" & oc
             os = os & oc & " "
         Next ct
         lbIN(0).Text = os
         'If communication error flag was set, indicate error message
-        'UPGRADE_WARNING: Couldn't resolve default property of object NRFlag. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
         If NRFlag = 1 Then lbIN(0).Text = "Acceptor Busy / Not Connected" 'display only error message
-        'UPGRADE_WARNING: Couldn't resolve default property of object NRFlag. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
         If NRFlag = 2 Then lbIN(0).Text = "Checksum Error" 'display data + error message
         'This routine interprets the global variables as set by the communication routine
         'and updates the display information to indicate the current state of the Acceptor
         For ct = 1 To 7 'Clear any invalid bill credit labels
-            'UPGRADE_WARNING: Couldn't resolve default property of object ct. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             If ct <> LastCredit Then lbD(ct).Visible = False
-            'UPGRADE_WARNING: Couldn't resolve default property of object ct. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             If ct = LastCredit Then lbD(ct).Visible = True
         Next ct
         'Set darker color to credit label for residual display (useful during
