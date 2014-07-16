@@ -175,10 +175,12 @@ Public Class Apex232
     'Note:  This variable will only be active for one communication cycle.
 
     Public LastCredit As Byte
-    'Since the Credit variable is only active (nonzero) for one communication
-    'cycle, this variable is provided as a backup copy of the credit value [1 to 7]
+    'This variable is provided as a backup copy of the credit value [1 to 7]
     'to indicate the value of the most recent stacked bill.  This variable will only
-    'change if a new bill with a different value is stacked.
+    'change if a new bill with a different value is stacked. This value should NOT
+    'be handled until the Stacked value is set to 1. The credit value may stay
+    'at a given value for a number of cycles (dependent on poll time) before the 
+    'stacked event is raised by the slave.
 
     '************************************************************
     '*                RS-232 Globals                            *
@@ -552,6 +554,8 @@ inbad:
         If LastCredit > 0 Then lbD(LastCredit).ForeColor = System.Drawing.ColorTranslator.FromOle(RGB(150, 0, 150))
         'If bill just credited last cycle, override the dark color with bright color
         '(if the user is watching the screen, the bright flash will confirm a newly-credited note)
+        'This is subtle, but check the Stacked variable to ensure we only count a credit one time. A credit
+        'message may be sent multiple times but a stacked event is sent only one. Use that to control your logic.
         If Credit > 0 And Stacked = 1 Then
             lbD(Credit).ForeColor = System.Drawing.ColorTranslator.FromOle(RGB(255, 192, 255)) 'flash bright
             If Delay > 4 Then
