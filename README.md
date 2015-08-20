@@ -19,7 +19,7 @@ VB .NET RS-232 Sample Program using the MSComm Library. This application is a go
 
 
 ## Setup
-Open the Visual Studio project file and satisfy the MSCommLib dependency. You should then be able to build and debug the application.
+Open the Visual Studio project file and satisfy the MSCommLib dependency. You should then be able to build and debug the application. Included is a zip file containing the three referenced dlls.
 
 ## Questions
 Please [let us know](https://github.com/PyramidTechnologies/VB-RS-232/issues/new).
